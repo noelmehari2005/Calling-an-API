@@ -10,7 +10,7 @@
   <h1>Friends</h1>
 
   <div class="controls">
-    <!-- MISSING HTML ADDED HERE -->
+
     <button id="LoadAllBtn">Load All Friends</button>
 
     <input 
@@ -66,6 +66,8 @@
       tableBody.appendChild(row);
     }
 
+    
+
     async function loadAllFriends() {
       clearTable();
       showMessage("Loading all friends...");
@@ -90,6 +92,9 @@
         showMessage(`Error loading friends: ${error.message}`);
       }
     }
+
+
+    loadAllBtn.addEventListener("click", loadAllFriends);
 
     async function findFriend() {
       const id = friendIdInput.value.trim();
@@ -122,7 +127,6 @@
       }
     }
 
-    loadAllBtn.addEventListener("click", loadAllFriends);
     findBtn.addEventListener("click", findFriend);
   </script>
 </body>
